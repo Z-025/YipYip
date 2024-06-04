@@ -8,9 +8,27 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+
+  {
+    path: 'perfil',
+    loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
+  },
+  {
+    path: 'buscador',
+    loadChildren: () => import('./buscador/buscador.module').then( m => m.BuscadorPageModule)
+  },
+  {
+    path: 'historial',
+    loadChildren: () => import('./historial/historial.module').then( m => m.HistorialPageModule)
+  },
+
 ];
 
 @NgModule({

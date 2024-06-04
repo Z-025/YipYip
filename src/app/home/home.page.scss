@@ -1,27 +1,40 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+.image-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+  z-index: 10;
+  position: relative;
+  margin-top: 20px; 
+  margin-bottom: 20px;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.responsive-img {
+  max-width: 50%;
+  height: auto;
+  margin-top: 20px; 
+  margin-bottom: 20px;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
 
-  color: #8c8c8c;
-
-  margin: 0;
+.centered-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
 }
 
-#container a {
-  text-decoration: none;
+.app-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10vh;
+}
+
+.animated-input {
+  transition: transform 1s ease; // Define la transición para el movimiento
+}
+
+.animate-input { // Clase adicional para activar la animación
+  transform: translateX(100%); // Mueve los elementos 100% hacia la derecha
 }

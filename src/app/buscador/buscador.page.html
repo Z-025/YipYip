@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="goToHome()">
+        <ion-icon name="home"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Buscador</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="search-container">
+    <ion-searchbar [(ngModel)]="searchTerm" (ionChange)="search()" placeholder="Buscar..." class="searchbar"></ion-searchbar>
+
+    <!-- Lista de resultados de búsqueda -->
+    <ion-list *ngIf="searchResults.length > 0" class="search-results">
+      <ion-item *ngFor="let result of searchResults" lines="none" class="search-item">
+        <ion-label>{{ result.name }}</ion-label>
+      </ion-item>
+    </ion-list>
+
+    <!-- Mensaje si no hay resultados de búsqueda -->
+    <div class="ion-text-center no-results" *ngIf="searchResults.length === 0 && searchTerm !== ''">
+      <p>No se encontraron resultados para "{{ searchTerm }}"</p>
+    </div>
+  </div>
+</ion-content>
